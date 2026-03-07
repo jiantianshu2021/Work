@@ -1,0 +1,14 @@
+\documentclass{article}
+\input{Format.tex}
+\begin{document}
+\[T^{-1}: X_0\times B \to \mathcal{X}\]
+\[T^{-1}(x,t)=(z(x,t),t)\]
+\[\pi(z(x,t),t)=x\]
+Denote the vector field of type-(1,0) on $\X$ as $\nu=v-iJ(v)$ where $J$ is the complex strucure. Due to the good trivialization, we have both of $v$ and $J(v)$ tangent to a complex submanifold being projected onto a point. Hence $\pi_*(\nu)=0$ and $\nu_x=\frac{\partial}{\partial{t}}+ A\frac{\partial}{\partial{z}}$ in coordinates. $\pi_*({\frac{\partial}{\partial t}})=\frac{\partial z}{\partial t}\frac{\partial}{\partial z}+\frac{\partial \bar{z}}{\partial t}\frac{\partial}{\partial \bar{z}}$. Then at $t=0$ we have
+\[\pi_*(\nu)=\frac{\partial z}{\partial t}\frac{\partial}{\partial z}+\frac{\partial \bar{z}}{\partial t}\frac{\partial}{\partial \bar{z}}+A\frac{\partial}{\partial{z}}=0\]
+This shows $A=-\frac{\partial z}{\partial t}\frac{\partial}{\partial z}$ and $\frac{\partial \bar{z}}{\partial t}=0$ which implies that $\pi$ is holomorphic in $t$ at $t=0$. This is surprising as we don't assume the holomorphicity a priori, but we get it on a process of doing something irrelevant.
+
+We can also prove it simply by chain rule. As $\pi(z(x,t),t)=x$, applying $\frac{\partial}{\partial \bar{t}}$ on both sides and using the holomorphicity of $z$ with respect to $t$ and that of $\pi$ with respect to $z$ at $t=0$, we can observe the fact immediately. 
+
+
+\end{document}

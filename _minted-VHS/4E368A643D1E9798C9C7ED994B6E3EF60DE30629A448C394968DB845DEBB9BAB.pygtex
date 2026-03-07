@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}defbeamertemplate}\PYG{n+nb}{\PYGZob{}}background canvas\PYG{n+nb}{\PYGZcb{}\PYGZob{}}standin/name\PYG{n+nb}{\PYGZcb{}\PYGZob{}}your def\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}gothamset}\PYG{n+nb}{\PYGZob{}}standin BG template= name\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

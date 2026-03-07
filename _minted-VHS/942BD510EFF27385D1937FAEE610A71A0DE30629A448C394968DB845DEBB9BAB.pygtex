@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}title}\PYG{n+na}{[your shorttitle]}\PYG{n+nb}{\PYGZob{}}Your title\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}date}\PYG{n+na}{[shortdate]}\PYG{n+nb}{\PYGZob{}}\PYG{k}{\PYGZbs{}today}\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}author}\PYG{n+na}{[your shortauthor name]}\PYG{n+nb}{\PYGZob{}}John DOE\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

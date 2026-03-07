@@ -1,0 +1,476 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+\setbeamertemplate{theorems}[numbered]
+\theoremstyle{definition}
+\newtheorem{Def}{Definition}
+\theoremstyle{example}
+\newtheorem{Ex}{Example}
+\usetheme{gotham}
+
+	\gothamset{
+		numbering= framenumber,
+		% tocframe template= gotham simple,
+		parttocframe default=off,
+		sectiontocframe default=off,
+		subsectiontocframe default=off,
+	}
+	\usepackage{mathtools}
+	\usepackage{standalone}
+	\usepackage{tikz}
+	\usetikzlibrary{decorations.markings}
+	\usepackage{pgfplots}
+	\pgfplotsset{compat=1.18}
+	\usepackage{tabularray} % Typeset tabulars and arrays (contains equivalent of longtable, booktabs and dcolumn at least) 
+		\UseTblrLibrary{booktabs} % to load extra commands from booktabs
+	\usepackage{changepage}
+	\usepackage{appendixnumberbeamer}
+		\newcommand{\famName}[1]{\textsc{#1}}
+	\usepackage{minted}
+		\definecolor{codeback}{rgb}{0.90,0.91,0.92}
+		\definecolor{codebackdark}{rgb}{0.10,0.11,0.12}
+		\usemintedstyle{emacs}
+		\setmintedinline[tex]{bgcolor=codeback}
+		\setminted[tex]{
+			autogobble,
+			bgcolor=codeback,
+			tabsize=4,
+		}
+
+	\usepackage[scale=2]{ccicons}
+	% \usepackage{pgfplots}
+		\usepgfplotslibrary{dateplot}
+
+	\newcommand{\themename}{\textbf{\textsc{Gotham}}}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\input{Format.tex}
+\title[]{Constructing variations of Hodge structure and applications to uniformization}
+\subtitle{A review of Simpson's work}
+\date[]{\today}
+\author[]{Jiang Tianshu}
+\institute{}
+% \titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.pdf}}
+
+
+\begin{document}
+\maketitle
+
+	\begin{frame}[toc]{Table of contents}%
+		\tableofcontents%[hideallsubsections]
+	\end{frame}
+
+\section{Motivation}
+	\begin{frame}
+		The target of this thesis is to construct representations of the fundamental group of a complex manifold $X$ into a complex linear group $G$ from some holomorphic data. 
+	\end{frame}
+	\subsection{Variations of Hodge structure}
+		\begin{frame}
+			% We begin with a brief review of polarized variations of Hodge structure (VHS). Let $\mathcal{Y}$ be a family of K\"ahler manifolds parameterized by a complex manifold $X$ and we require the projection $\pi: \mathcal{Y}\to X$ to be a proper submersion. Then we have a holomorphic bundle $\mathcal{H}^{k}\coloneqq R^k\pi_*\underline{\mathbb{Z}}\otimes \mathcal{O}_X$ equipped with a flat connection $\nabla$ called the Gauss-Manin connection. By considering the filtered relative de Rham complex $F^{\cdot}\Omega_{\mathcal{Y}/X}^{\cdot}$, we can obtain a decreasing filtration $F^{\cdot}\mathcal{H}^k\coloneqq R^{k}\pi_*F^{\cdot}\Omega_{\mathcal{Y}/X}^{\cdot}$ for $\mathcal{H}^k$. And the behavior of the Gauss-Manin connection on it satifies the Griffith transversality:
+			% \begin{equation}\label{weaktransversality}
+			% 	\nabla F^p\mathcal{H}^k\subset F^{p-1}\mathcal{H}^k\otimes \Omega_X^1.
+			% \end{equation}
+		\end{frame}
+		\begin{frame}
+			% Indeed, the fibre of $F^p\mathcal{H}^k$ at each point $x\in X$ is isomorphic to the Hodge filtration $F^pH^k(\mathcal{Y}_x,\mathbb{C})$. Hence 
+		\end{frame}
+		\begin{frame}{System of Hodge bundles}
+			% The category of polarized variations of Hodge structure consists of a smooth 
+		\end{frame}
+
+\section{Analytic results}
+\begin{frame}
+	\begin{theorem}\label{t1}
+		Suppose $(X,\omega)$ satisfies the assumptions made by Simpson, and suppose $(E,\bar{\partial},\theta, A, K)$ is a Higgs bundle with a group action $A$ and a metric $K$ such that $\Lambda F_{\nabla_{K}^{hs}}$ is bounded, such that it is stable with repsect to the group action. Then there is an A invariant metric $H$ with $\det(H)=\det(K)$, comparable with $K$, $\bar{\partial}(K^{-1}H)\in L^2$, such that $\Lambda {F_{\nabla_{H}^{hs}}}^{\perp}=0$.
+	\end{theorem}
+	\begin{proposition}\label{prop3.4}
+		Suppose $E$ is a Higgs bundle and $H$ is a metric with $\Lambda F_{\nabla_H^{hs}}^{\perp}=0$. Then 
+		\[
+		(2\operatorname{c}_2(E,H)-\frac{r-1}{r}\operatorname{c}_1(E,H)^2)\cdot \omega^{n-2}=C\int_X \tr(F_{\nabla_H^{hs}}^{\perp}\wedge F_{\nabla_H^{hs}}^{\perp})\wedge \omega^{n-2}\geq 0
+		\]
+		and if equality holds then $F^{\perp}=0$. In particular if $\tr(F)=0$ and $\operatorname{c}_2(E,H)\cdot \omega^{n-2}=0$ then $\nabla_{H}^{hs}$ is flat
+		\end{proposition}
+\end{frame}
+
+\section{Main results}
+\subsection{Construction of VHS (vector bundle version)}
+    \begin{frame}{Construction of VHS (vector bundle case)}
+		Given a system of Hodge bundles $(\oplus_{p+q=k} \mathcal{H}^{p,q},\theta)$ on $X$ such that \[\theta: \mathcal{H}^{p,q}\to \mathcal{H}^{p-1,q+1}\otimes \Omega_X^1\] satisfies the integrability condition $\theta\wedge \theta=0$ and a metric $h=\oplus_{p+q=k} h^{p,q}$, one can construct a Hitchin-Simpson connection $\nabla_h^{hs}\coloneqq \nabla_h^c+\theta+\theta^{*h}$ where $\nabla_h^c$ is the Chern connection of $h$. Then it is easy to check that $\nabla_h^{hs}$ preserves the sesquilinear form $s\coloneqq \oplus_{p+q=k}\sqrt{-1}^{q-p}h^{p,q}$. Thus if the curvature $F_{\nabla_h^{hs}}$ is zero, we recover a polarized variation of Hodge structure. 
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+			% \begin{definition}
+			% 	A system of Hodge bundles is a holomorphic vector bundle $E$ together with a decomposition $E=\oplus_{p+q=k} E^{p,q}$ and a holomorphic section $\theta\in H^0(\oplus_{p+q=k} \operatorname{Hom}(E^{p,q}, E^{p-1,q+1})\otimes \Omega_X^1)$ such that $\theta\wedge \theta=0$.
+			% \end{definition}
+		\begin{theorem}
+			Suppose $(X,\omega)$ is a compact K\"ahler manifold. Then the category of variations of Hodge structure (with morphism preserve connection) is isomorphic to the full subcategory of system of Hodge bundles $E$ such that $\operatorname{c}_1(E)=0$, $\operatorname{c}_2(E)\cdot [\omega]^{n-2}=0$ and $E$ is a direct sum of stable systems of Hodge bundles of degree zero.
+		\end{theorem}
+		\noindent \textit{Proof.} 
+		If $E$ is stable with degree zero, by $\partial\bar{\partial}$-lemma, we can find a metric $h$ on $\det(E)$ such that $F_{\nabla_{h}^{hs}}$ is the harmonic represetative of $\operatorname{c}_1(E)$, then we have $\Lambda F_{\nabla_{h}^{hs}}=0$ (note that for a linebundle Hitchin-Simpson connection and Chern connection are coincident). Then by Theorem~\ref{t1}, we get a metric on $E$ such that $\Lambda F=0$. If $E$ is in the full subcategory, we do this for each summand. By construction we have $\tr(F)$ being the harmonic representative of $\operatorname{c}_1(E)$, hence $\tr(F)=0$. Then we can apply Proposition~\ref{prop3.4} to get $F=0$, i.e. $E$ comes from a variation of Hodge structure. On the other hand, if $E$ comes from a VHS, then by the Chern-Weil formula, we have $E$ lies in the subcategory. 
+		
+		So far, we have shown that the functor is surjective. Next we show that the functor is fully faithful, i.e. there is a one to one correspondence between morphisms in the category of VHS and morphisms in the category of system of Hodge bundles. It is obviously injective hence it suffices to show that if $f: E'\to E''$ is a map of systems of Hodge bundles comes from the category of VHS, i.e. $E'$ and $E''$ are equipped with flat connections $\nabla'$ and $\nabla''$ respectively, then $\nabla(f)=0$, where $\nabla$ is the induced connection on $\operatorname{Hom}(E',E'')$, or equivalently $f$ preserves the connections. We omit the proof. So far, we have proved the equivalence of categories. But it is indeed an isormorphism. Suppose we start from a VHS $(E, \nabla')$ and use Theorem~\ref{t1} to get a flat connection $\nabla''$ on $E$, then the above arguements show that $\operatorname{id}: (E, \nabla')\to (E, \nabla'')$ preserves the connection, i.e. $\nabla'=\nabla''$, hence it is an isomorphism. \hfill \qed
+	\end{frame}
+	\subsection{Construction of VHS (principal bundle version)}
+	
+	\begin{frame}{Cartan decomposition}
+		Let $\mathfrak{g}_0$ be a real semisimple Lie algebra and $\mathfrak{g}$ be its complexification. A Cartan involution $\theta$ of $\mathfrak{g}_0$ is an involutive automorphism such that the bilinear form $B_{\theta}(X,Y)\coloneqq -B(X,\theta(Y))$ is positive definite where $B$ is the Killing form. Then we have a Cartan decomposition $\mathfrak{g}_0=\mathfrak{k}_0\oplus \mathfrak{p}_0$ where $\mathfrak{k}_0$ and $\mathfrak{p}_0$ are the eigenspaces of $\theta$ with eigenvalues $1$ and $-1$ respectively. We can also complexify it to get $\mathfrak{g}=\mathfrak{k}\oplus \mathfrak{p}$.
+
+		Define $\tau\coloneqq \sigma \circ \theta$ where $\sigma$ is the complex conjugation of $\mathfrak{g}$ with respect to $\mathfrak{g}_0$. Then $h(X,Y)\coloneqq -B(X,\tau(Y))$ is a Hermitian metric on $\mathfrak{g}$. Simple calculation shows that $h([Z,X],Y)=h(X,[-\tau(Z),Y])$, i.e. $Z^{h*}=-\tau(Z)$.
+	\end{frame}
+	\begin{frame}{Hodge group}
+		Let us consider the structure group comes from a variation of Hodge structure which is a Lie subgroup $G_0$ of $\mathrm{GL}(V)$ where $V$ is a complex vector space with a Hodge structure, i.e. $V=\oplus_{p+q=k} V^{p,q}$. Then the complexified Lie algebra $\mathfrak{g}\coloneqq \mathfrak{g}_0\otimes \mathbb{C}$ of $G_0$ is a subalgebra of $\mathrm{End}(V)$ and inherits a Hodge decomposition $\mathfrak{g}=\oplus_{p}\mathfrak{g}^{p,-p}$ such that $[g^{r,-r}, g^{p,-p}]\subset g^{p+r,-p-r}$.
+
+		To make things easier to handle with, we give the following formal definition of a polarized Hodge group $G_0$.
+		\begin{Def}\label{Hodge group}
+			A polarized Hodge group $G_0$ is a semisimple real algebraic Lie group such that its complexified Lie algebra $\mathfrak{g}$ admits a Hodge decomposition $\mathfrak{g}=\oplus_{p}\mathfrak{g}^{p,-p}$ satisfying $[\mathfrak{g}^{r,-r}, \mathfrak{g}^{p,-p}]\subset \mathfrak{g}^{p+r,-p-r}$, such that the Killing form $B$ respects the Hodge decomposition, i.e. $B(\mathfrak{g}^{p,-p}, \mathfrak{g}^{r,-r})=0$ if $p+r\neq 0$, such that $(-1)^{p+1}B_{|\mathfrak{g}^{p,-p}}>0$.
+		\end{Def}
+	\end{frame}
+	\begin{frame}{Principal system of Hodge bundles}
+		By the uniqueness of Cartan decomposition, it follows that $\mathfrak{k}=\oplus_{\text{p even}}\mathfrak{g}^{p,-p}$ and $\mathfrak{p}=\oplus_{\text{p odd}}\mathfrak{g}^{p,-p}$. Let $K_0$ be the Lie subgroup of $G_0$ such that $\operatorname{Ad}(k)$ preserves the Hodge decomposition. Then it is easy to show that $K_0$ is compact. Let's denote the complexifications of $K_0$ and $G_0$ by $K$ and $G$ respectively. 
+		\begin{Def}
+			A principal system of Hodge bundles is a holomorphic principal $K$-bundle $P$ together with a holomorphic section $\theta\in H^{0}(P\times_K \mathfrak{g}\otimes \Omega_X)$ which only takes values in $\mathfrak{g}^{-1,1}$, such that $[\theta(u),\theta(v)]=0$ for any $u,v\in T_xX$. 
+		\end{Def}  
+		As $\operatorname{Ad}(k)$ preserves the Hodge decomposition, we can also regard $\theta$ as a holomorphic section of $P\times_K \mathfrak{g}^{-1,1}\otimes \Omega_X$.
+
+		Let $P_{H}\hookrightarrow P$ be a $C^{\infty}$ reduction of the structure group of $P$ from $K$ to $K_0$. We can think of it as a metric $H$ on $P$. Then there is a unique connection $\nabla^{c}$on $P_H$ which is compatible with the holomorphic structure of $P$.
+	\end{frame}
+	\begin{frame}{Principal variation of Hodge structure}
+		The polariation on $\mathfrak{g}$ induces a Hermitian metric $h$ which in turn induces a metric on the associated bundle $P_H\times_{K_0} \mathfrak{g}$. Pointwisely, suppose $\theta=Z\otimes \operatorname{d}z$, we define $\bar{\theta}_H\coloneqq Z^{h*}\otimes \operatorname{d}\bar{z}=-\tau(Z)\otimes \operatorname{d}\bar{z}=\sigma(Z)\otimes \operatorname{d}\bar{z}=\bar{\theta}$, i.e. $\bar{\theta}_H$ is nothing but the complex conjugate of $\theta$ with respect to the real structure given by $\mathfrak{g}_0$ and $X$. Then $\theta+\bar{\theta}_H$ is a $\mathfrak{g}_0$ valued smooth section of $P_H\times_{K_0} \mathfrak{g}_0\otimes A_X^1$. Such a section naturally induces a tensortial form on the principal bundle $P_H\times G_0$ (in the text followed, we will not distinguish between a tensorial form and a section in the associated bundle as they are equivalent). Hence we have a legitimate connection $\nabla^{hs}=\nabla^{c}+\theta+\bar{\theta}_H$ on the principal bundle $R_H\coloneqq P_H\times G_0$. 
+		\begin{Def}
+			A principal variation of Hodge structure with respect to a Hodge group $G_0$ is a principal system of Hodge bundles $(P,\theta)$ together with a metric $P_H\hookrightarrow P$ such that the induced connection $\nabla^{hs}$ is flat.
+		\end{Def}
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		Before we proceed, let us briefly review the tangent space of a homogeuous space. Let $G/K$ be a homogeneous space. Then we have
+		\begin{proposition}
+			$T(G/K)\cong G\times_K (\mathfrak{g}/\mathfrak{k})$ where $\g$ and $\kk$ are the Lie algebras of $G$ and $K$ respectively.
+		\end{proposition}
+		\noindent \textit{Proof.} 
+			We regard $G$ as a principal $K$-bundle over $G/K$. Let $\pi: G\to G/K$ be the projection. Then at the point $gK$ we can identify $\g/\kk$ with $T_{gK}(G/K)$ via the map $\diff\pi_{g}$. More precisely, for $X\in \g$, then for any function $f$ defined on $G/K$ (be aware that f is invariant under the right action of $K$), we have $\diff\pi_g(X)(f)=\frac{\diff}{\diff t}f(g\cdot\exp(tX))$.
+			It is obvious that $\kk$ is the kernel of this map. The problem is $g$ is not canonically determined by $gK$. Now suppose $g'=gk$ for some $k\in K$. Then $T_{gK}$ is also identified with $\g/\kk$ via the map $\diff \pi_{g'}$. But 
+			\begin{align*}
+				\diff \pi_{g'}(Ad(k^{-1})X)(f)&=\frac{\diff}{\diff t}f(g'\cdot\exp(tAd(k^{-1})X))\\
+				&=\frac{\diff}{\diff t}f(gk\cdot\exp(tAd(k^{-1})X))\\
+				&=\frac{\diff}{\diff t}f(gkk^{-1}\exp(tX)k)\\
+				&=\frac{\diff}{\diff t}f(g\exp(tX))\\
+				&=\diff \pi_g(X)(f)
+			\end{align*}
+			This shows that the vector $[g,X]$ at $g$ is identified with the vector $[gk,Ad(k^{-1})X]$ at $gk$. But this is exactly the equivalence relation we have on $G\times \g/\kk$ to get $G\times_K \g/\kk$. \hfill \qed
+	\end{frame}
+	\begin{frame}
+		Denote $\h_0\coloneqq \oplus_{p\neq 0}\g^{p,-p}\cap \g_0$, $\g^-\coloneqq \oplus_{p<0}\g^{p,-p}$ and $\g^+\coloneqq \oplus_{p>0}\g^{p,-p}$. Then $T(G_0/K_0)\cong G_0\times_{K_0} \h_0$. Moreover, as $\h_0\otimes \mathbb{C}=\g^{-}\oplus \g^{+}$, we have $T(G_0/K_0)\otimes \mathbb{C}\cong G_0\times_{K_0} (\g^{-}\oplus \g^{+})$. This gives us an intergrable complex structure on $G_0/K_0$ , hence it is a complex manifold whose holomorphic tangent bundle is isomorphic to $G_0\times_{K_0} \g^{-}$.
+
+		Suppose $(P_H, \nabla^{hs})$ is a principal variation of Hodge structure. Let us pull back all the structures to the universal cover $\widetilde{X}$ without changing the notation. Then we have a trivialization $\varphi: R_H \to G_0\times \widetilde{X}$ via the parallel transport of $\nabla^{hs}$. More precisely, fix a base point $x_0\in \widetilde{X}$ and pick a point $e_{x_0}\in P_{H,x_0}$, parallel transport it with respect to the flat connection $\nabla^{hs}$ to get a section $f$, then we identify $f$ with the constant section $\id_g$ in the trivial bundle $G_0\times \widetilde{X}$. Then for each $x\in \widetilde{X}$, and any $v\in P_{H,x}$, we have $v=f\cdot g(x)$ for some $g(x)\in G_0$. Hence $\varphi_x(P_{H,x})=g(x)K_0$. This gives us the period map $\mathcal{P}: \widetilde{X}\to G_0/K_0$. As in the case of usual variations of Hodge structure, we have 
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\begin{proposition}
+			The period map $\mathcal{P}$ is holomorphic and the induced bundle morphism $\diff\mathcal{P}:T\widetilde{X}\to G_0\times_{K_0} \g^{-}$ is $\theta$.
+		\end{proposition}
+		\noindent \textit{Proof.} 
+			The proof is tautological. By symmetry, we only need to consider at the base point $x_0$. Let $\gamma(t)$ be a curve in $\widetilde{X}$ passing through $x_0$.Let $e(t)$ be the horizontal lift in $R_H$ with respect to $\nabla^c$ such that $e(0)=e_{x_0}$ (be aware that $e$ stays inside $P_H$) and $f$ be the horizaontal lift with respect to $\nabla^{hs}$ such that $f(0)=e_{x_0}$. Then we have $e=f\cdot g(t)$ and by definition $g(t)K_0$ is the map $\mathcal{P}\circ \gamma$. Then we have 
+			\begin{align*}
+				\nabla^{hs}e'(0)&=\nabla^{hs}(f'(0)+g'(0))\\
+				(\theta+\bar{\theta}_H)(e'(0))&=g'(0)=g'(0)^{-}+g'(0)^{+}\\
+				\theta(\gamma'(0)^{1,0})&=g'(0)^{-}
+			\end{align*}
+			If we regard $g'(0)$ as an element in $\g/\kk$, then it is the image of $\diff\mathcal{P}(\gamma'(0))$. And the above equations show that $\diff\mathcal{P}(\gamma'(0)^{0,1})^{+}=0$ and $\diff\mathcal{P}(\gamma'(0)^{1,0})^{-}=\theta(\gamma'(0)^{1,0})$.\hfill \qed
+	\end{frame}
+	\begin{frame}
+		\begin{center}
+			\begin{tikzpicture}[scale=1.2]
+
+			% 曲面（假3D）
+			\shade[ball color=gray!20, opacity=0.4] (0,0) ellipse (4 and 3);
+			\coordinate (a) at (-2,0);
+			\coordinate (b) at (0,1);
+			\coordinate (c) at (0,-1);
+			\coordinate (d) at (2,0);
+			% 曲线
+			\draw[
+				thick,
+				postaction={decorate},
+				decoration={
+					markings,
+					mark=at position 0.6 with {\arrow{>}}
+				}
+			]
+			(a) .. controls (-1,0.8) .. (b)
+			node[midway, below, sloped] {$\gamma^{-1}$};
+			\draw[
+				thick,
+				postaction={decorate},
+				decoration={
+					markings,
+					mark=at position 0.6 with {\arrow{>}}
+				}
+			]
+			(c) .. controls (1,-0.8) .. (d)
+			node[midway, below, sloped] {$\gamma^{-1}$};
+			\draw[
+				thick,
+				postaction={decorate},
+				decoration={
+					markings,
+					mark=at position 0.6 with {\arrow{>}}
+				}
+			]
+			(a) .. controls (-1,-0.3) .. (c)
+			node[midway, above, sloped] {$\alpha$};
+			\draw[
+				thick,
+				postaction={decorate},
+				decoration={
+					markings,
+					mark=at position 0.4 with {\arrow{>}}
+				}
+			]
+			(b) .. controls (1,0.3) .. (d)
+			node[midway, above, sloped] {$\gamma\cdot\alpha$};
+			\fill (a) circle (1pt);
+			\fill (b) circle (1pt);
+			\fill (c) circle (1pt);
+			\fill (d) circle (1pt);
+
+			% 标注点名
+			\node[below left] at (a) {$y$};
+			\node[above left] at (b) {$\gamma\cdot y$};
+			\node[below left] at (c) {$x$};
+			\node[below right] at (d) {$\gamma\cdot x$};
+
+			% 起点向量
+			\draw[->, thick, red] (a) -- (-2.5,0.8);
+			\node[above left] at (-2.5,0.8) {$r_y$};
+			\draw[->, thick, red] (b) -- (0,2);
+			\node[above right] at (0,2) {$\gamma\cdot r_y$};
+			% \draw[->, thick, blue] (a) -- (-2,1);
+			% \node[above right] at (-2,1) {$\varphi(\gamma\cdot r_y)$};
+			% 终点向量（平行移动后）
+			\draw[->, thick, red] (c) -- (-0.5,-0.2);
+			\node[above left] at (-0.5,-0.2) {$r_x$};
+			\draw[->, thick, red] (d) -- (2,1);
+			\node[above right] at (2,1) {$\gamma\cdot r_x$};
+			% \draw[->, thick, blue] (c) -- (0,0);
+			% \node[below right] at (0,0) {$\varphi(\gamma\cdot r_x)$};
+
+		\end{tikzpicture}
+		\end{center}
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		The fundamental group $\pi_1(X)$ acts on $R_H$ via deck transformations and the pull back morphism (we adopt the convention that it is a left action). Let $r\in R_H$, then for a fixed loop $\gamma\in \pi_1(X)$, we have $g_\gamma(r)\cdot \varphi(r)=\varphi(\gamma\cdot r)$ with $g_\gamma(r)\in G_0$. Suppose we can show that $g_\gamma(r)$ only depends on $\gamma$, then it follows easily that we can define a representation $\rho: \pi_1(X)\to G_0$ by $\rho(\gamma)=g_\gamma(r)$. Indeed, since the relation $\rho(\gamma)\cdot \varphi(r)=\varphi(\gamma\cdot r)$ holds for all $r$, we have $\rho(\gamma_1\gamma_2)\cdot \varphi(r)=\varphi(\gamma_1\gamma_2\cdot r)$, we also have $\rho(\gamma_1)\varphi(\gamma_2\cdot r)=\varphi(\gamma_1\gamma_2\cdot r)$, but $\varphi(\gamma_2\cdot r)=\rho(\gamma_2)\cdot \varphi(r)$, hence $\rho(\gamma_1\gamma_2)\cdot \varphi(r)=\rho(\gamma_1)\rho(\gamma_2)\cdot \varphi(r)$, which implies $\rho(\gamma_1\gamma_2)=\rho(\gamma_1)\rho(\gamma_2)$. Hence we call for the following lemma.
+		\begin{lemma}
+			$g_\gamma(r)$ depends only on $\gamma$.
+		\end{lemma}
+		\noindent \textit{Proof.} 
+			We prove first that $g_\gamma$ is independent of the value of $r$ at a fixed point $x\in \widetilde{X}$. Suppose $r_{2}=r_1\cdot g$, as $\varphi$ preserves the right action of $G_0$, we have $g_\gamma(r_2)\cdot\varphi(r_1)\cdot g=g_\gamma(r_2)\cdot\varphi(r_2)$. On the other hand, $g_\gamma(r_2)\cdot\varphi(r_2)=\varphi(\gamma\cdot r_2)=\varphi(\gamma\cdot r_1\cdot g)=\varphi(\gamma\cdot r_1)\cdot g$. Therefore, $g_\gamma(r_2)\cdot\varphi(r_1)\cdot g=\varphi(\gamma\cdot r_1)\cdot g$, which implies $g_\gamma(r_2)\cdot\varphi(r_1)=\varphi(\gamma\cdot r_1)$, hence $g_\gamma(r_2)=g_\gamma(r_1)$.
+			
+			Now let $r_y$ be a frame in $R_H$ at some other point $y$. As is shown in th above figure, we may choose a path $\alpha$ from $y$ to $x$. And we parallel transport $r_y$ along $\alpha$ to get a frame $r_x$ at $x$. As $r_y$ and $\gamma\cdot r_y$ comes from the same frame at the same point on the underlying manifold $X$, the same holds for $r_x$ and $\gamma\cdot r_x$ and as $\alpha$ and $\gamma\cdot \alpha$ comes from the same path on $X$, we know that $\gamma\cdot r_x$ comes from the parallel transport of $\gamma\cdot r_y$ along $\gamma\cdot\alpha$. This implies that $\varphi(\gamma\cdot r_x)=\varphi(\gamma\cdot r_y)$ and $\varphi(r_x)=\varphi(r_y)$. Thus $g_\gamma(r_y)=g_\gamma(r_x)$.  \hfill \qed
+			% On the other hand,As $\widetilde{X}$ is simply connected and the connection is flat, we have that $\varphi(\gamma\cdot r_x)$ comes from the parallel transport of $\varphi(\gamma\cdot r_x)$ along $\alpha$. Then as the parallel transport preserves the right action of $G_0$, we have $g_\gamma(r_y)=g_\gamma(r_x)$.
+			\begin{proposition}\label{equiv}
+			The period map is equivariant under the representation $\rho$, i.e. $\mathcal{P}(\gamma \cdot x)=\rho(\gamma)\cdot \mathcal{P}(x)$.
+		\end{proposition}
+		\noindent \textit{Proof.} 
+			$\mathcal{P}(\gamma \cdot x)=\varphi P_H(\gamma\cdot x)=\varphi(\gamma\cdot P_H(x))=\rho(\gamma)\cdot \varphi(P_H(x))=\rho(\gamma)\cdot \mathcal{P}(x)$.\hfill \qed
+	\end{frame}
+	\begin{frame}{Hodge representation}
+		Let $V$ be a complex vector space with a polarized Hodge structure $V=\oplus_{p+q=k} V^{p,q}$. Let $S=\oplus S^{p,q}$ be the Hermitian form such that $H=\oplus_{p+q=k} (-1)^p S^{p,q}$ is a metric. 
+		\begin{Def}
+			A polarized Hodge representation $\Pi: G_0 \to \mathrm{GL}(V)$ is a complex representation such that the actions $K_0$ preserves the Hodge decomposition and the action of $\g$ is compatible with the Hodge type, i.e. $\g^{k,-k}\cdot V^{p,q}\subset V^{p+k,q-k}$, such that $S$ is preserved by $G_0$.
+		\end{Def}
+		In particular, the adjoint representation $\Ad: G_0\to \GL(\g)$ is a polarized Hodge representation.
+
+		Suppose $\Pi$ is an irreducible Hodge representation of $G_0$ ($G$), let $(P,\theta)$ be a principal system of Hodge bundles, then $P\times_K V$ is a system of Hodge bundles. A polarization $H$ on $V$ and a metric $P_H$ of $P$ together give a metric $H$ on the system of Hodge bundles $P\times_K V$.	
+	\end{frame}
+	
+	\begin{frame}[allowframebreaks]
+		\begin{Def}
+			Suppose $X$ is compact, a principal system of Hodge bundles $(P,\theta)$ is $\Pi$-stable, if the system of Hodge bundles $P\times_K V$ is stable.
+		\end{Def}
+		Note that since $G_0$ semisimple, and if we assume that $G_0$ is connected, then $\det(P\times_K V)$ is trivial, i.e. the first Chern class of the holomorphic bundle $P\times_K V$ is zero. One should be aware that $P\times_K V$, $P_H\times_{K_0} V$ or $R_H\times_{G_0} V$ are all isomorphic as smooth bundles, but the expression $P\times_K V$ gives it a holomorphic structure.
+
+		If $X$ is not compact, the notion of stability depends on our choice of a good metric $P_H$. Indeed, we need to choose a $P_H$ such that $\Lambda F_{\nabla^{hs}}$ is bounded. The curvature $F_{\nabla^{hs}}$ is a smooth section of the bundle $P_H\times_{K_0}\g_0\otimes A_X^2$. The killing form and $P_H$ together give us a metric on the bundle $P_H\times_{K_0}\g_0$, hence we can talk about the boundedness. The curvature $^{V}F_{\nabla^{hs}}$ of the derived bundle $P_H\times_{K_0} V$ is a smooth section of $P_H\times_{K_0}\mathfrak{gl}(V)\otimes A_X^2$ obtained by the equation $^{V}F_{\nabla^{hs}}=d\Pi(F_{\nabla^{hs}})$ where $d\Pi:\g_0\to \mathfrak{gl}(V)$ represents the representation at the level of Lie algebra. Then the following lemma is obvious,
+		\begin{lemma}
+			Let $\Pi: G_0\to V$ be a polarized Hodge representation, if $\Lambda F_{\nabla^{hs}}$ is bounded, then $\Lambda ^{V}F_{\nabla^{hs}}$ is also bounded.
+		\end{lemma}
+		Hence we can talk about the stability in the noncompact case.
+		\begin{Def}
+			Suppose $X$ is noncompact, let $(P,\theta, P_H)$ be a principal system of Hodge bundles with a metric $P_H$ such that $\Lambda F_{\nabla^{hs}}$ is bounded, we say $(P,\theta, P_H)$ is $(\Pi, P_H)$-stable if the system of Hodge bundles $P\times_K V$ is analytically stable with respect to the metric $(P_H, H)$.
+		\end{Def}	
+	\end{frame}
+	\begin{frame}[allowframebreaks]{Construction of principal VHS}
+		We have the following theorem obtained by Simpson.
+		\begin{theorem}
+			If $(P,\theta, P_H)$ is $(\Pi_i,P_H)$-stable with respect to some family of irreducible polarized Hodge representations $\{\Pi_i\}_i$, which faithfully represents $\g$, i.e. $\oplus_i \diff\Pi_i$ is injective, then there exists a metric $P_{K}$ such that $\Lambda F_{\nabla^{hs}}=0$. If in addition $X$ is compact and $\operatorname{c}_2(P\times_K \g)\cdot [\omega]^{n-2}=0$ then $F_{\nabla^{hs}}=0$ so this gives a principal variation of Hodge structure. 
+		\end{theorem}
+		\noindent \textit{Proof.} 
+		Fix an initial metric $P_{H_0}$ such that the notion of analytic stability is well-defined. If $\Pi$ is the representation of $G_0$ into $(V, H)=(\oplus V_i,\oplus H_i)$ described above, then $H$ and $P_{H_0}$ togehter give a metric $H_0$ on $P\times_K V=\mathcal{V}=\oplus\mathcal{V}_i$ which is a direct sum of systems of Hodge bundles, or a Higgs bundle with $U(1)\times U(1)$ symmetry. Then we can call for Theorem~\ref{t1} to run the H-Y-M flow 
+		\[
+		h^{-1}\dot{h}=-\sqrt{-1}\Lambda F_{\nabla^{hs}_{H(t)}}
+		\]
+		with $H(t)=H_0 h$. Since the curvature respects the $U(1)\times U(1)$ symmety and  the solution is unique, $h(t)$ also respects the action, in particular, $h$ respects the Hodge decomposition. The stabilty condition give us a limit $h_\infty$. In order to show that $h_\infty$ comese from a metric $P_K$, it suffices to show that $h_\infty(x)\in \Pi(K)$ for $\forall x$. For this purpose, we need the following theorem from the theory of Tannakian categories
+		\begin{theorem}[Chevalley]
+			Any algebraic subgroup $G$ of $GL(V)$ arises as the stablizer of a one dimensional subspace of a vector space $T(V)$ forming by tensor, direct sum and dual of $V$.
+		\end{theorem}
+		Or equivalently, we can characterized $G$ as the stablizer of a finite set of tensors composed by elements in $V$ and $V^*$. In our case, $\Pi(G)$ is characterized by a set of tensors. Hence it remains to show that given such a tensor $w$, $h(t)\cdot w=w$. Since $w$ is $\Pi(G)$ invariant, $\g \cdot w=0$. Assume $w\in T(V)\otimes T(V^*)$, let $\mathcal{W}$ be the linebundle associated to the linear subspace spanned by $w$, $\mathcal{T}$ be the bundle associated to $T(V)\otimes T(V^*)$ and $^{\otimes}h$ be the solution to the heat equation on $\mathcal{T}$. As $\Lambda F_0$ is $\g$-valued, $\Lambda F_0\cdot w=0$. Then it follows from the uniqueness of the heat solution that $^{\otimes}h_{|\mathcal{W}}=\id$. On the other hand the solution to the heat equation is compatible with tensor and dual representations, we have $h\cdot w=^{\otimes}h\cdot w=w$. Hence we have shown that $h\in \Pi(G)$. But we know that $h$ respects the Hodge decompostion, then $\Ad(h)\g^{p,-p}=\g^{p,-p}$ (as the represectation is faithful on the Lie algbra level, we identify the image of $\g$ with $\g$). As $K$ is by definition the maximal subgroup stablize the Hodge structure, we have $h\in \Pi(K)$, hence $H_\infty$ comes from a $K_0$-reduction $P_{H_\infty}$ of the $K$-bundle $P$. The stability condition shows that $\Lambda F_{\nabla^{hs}_{H_{\infty}}}=0$, as the representation is faithful on the level of Lie algebra, we have $\Lambda F_{\nabla^{hs}}=0$ on the principal bundle. If $X$ is compact and $\operatorname{c}_2(P\times_K \g)\cdot [\omega]^{n-2}=0$, then $\operatorname{c}_2(P\times_K V)\cdot [\omega]^{n-2}=0$. Indeed, since $\g$ semisimple, the linear space spanned by $\Ad$-invariant bilinear symmetric forms on $\g$ is one dimensional, hence $\operatorname{c}_2(P\times_K V)=C\cdot\operatorname{c}_2(P\times_K \g)$ for some constant $C$. Then we can apply Proposition~\ref{prop3.4} to show that $F_{\nabla^{hs}}=0$.\hfill \qed
+	\end{frame}
+	\begin{frame}{An example}
+		Let $V=\oplus V^{p,q}$ be a polarized Hodge structure with an indefinite Hermitian form ${s}=\oplus s^{p,q}$ such that $h=\oplus (-1)^p s^{p,q}$ is a metric. We define $G_0\coloneqq\Au(V,s)/U(1)$, then $K_0=\Au(V,h)/U(1)$. It follows that $G_0$ is a simple Lie group whose complexified Lie algebra $\g=\En(V)^{\perp}$. It is obvious that $\g^{p,-p}=\En(V)^{p,-p}\cap \g$ where $\En(V)^{k,-k}$ is the set of endomorphisms mapping $V^{p,q}$ into $V^{p+k,q-k}$  for any $p$ and $q$. Hence $G_0$ is a polarized Hodge group. 
+		\begin{definition}
+			A projective VHS modeled on $V$ is a principal VHS $(P_H,\nabla^{hs})$.
+		\end{definition}
+	\end{frame}
+	\begin{frame}
+		\begin{lemma}\label{projectivevariation}
+			Suppose $X$ is compact. If a system of Hodge bundles $E=\oplus E^{p,q}$ is a direct sum of stable ones with the same slope and satisfies the equality in Proposition~\ref{prop3.4}, then it induces a principal VHS. And the differential of the period map is $\theta: T(\widetilde{X})\to \En(E)^{-1,1}$.
+		\end{lemma}
+		\noindent \textit{Proof.}
+		Fix a fibre, denote it as $V$. The holomorpic frames comes from $E^{p,q}$ module the equivalence relation $e\sim z\cdot e$ give us a $K$-torsor, i.e. a holomorphic principal K-bundle where $K=(\En(V)^{\perp})^{0,0}$. And the Higgs field gives rise to a $\En(V)^{-1,1}$-valued tensorial form $\theta$. As $E$ is poly-stable, we can run the H-Y-M flow and use Theorem~\ref{t1} and Proposition~\ref{prop3.4} to get a metric $H$ on $E$ such that $F^{\perp}_{\nabla^{hs}_H}=0$. Then the projective unitary frames give us a $K_0$-torsor (i.e. a metric) with zero curvature. \hfill \qed
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\begin{corollary}
+			Suppose $\mathcal{L}$ is a line bundle on a Hodge manifold X with a polarization $\Theta$ and there exists a non-zero morphism $\psi:\mathcal{L}\to \Omega_X^1$. If $\mathcal{L}\cdot \Theta^{n-1}>0$, then $\mathcal{L}\cdot \Theta^{n-2}\leq 0$ and if in addition, the equality holds, there is a non-trivial representation $\pi_1(X)\to \operatorname{PSL}(2,\mathbb{R})$ and an equivariant map from $\widetilde{X}$ to the upper half-plane.
+		\end{corollary}
+		\noindent \textit{Proof.}
+		Consider the bundle $\LL\oplus \OX$ where we regard $\OX$ as the $(0,1)$-component and $\LL$ as the $(1,0)$-component. We define the Higgs field by 
+		\[
+			\theta =
+			\begin{pmatrix}
+			0 & 0 \\
+			\psi & 0
+			\end{pmatrix}
+			\]
+		Then it is a system of Hodge bundles and $\OX$ is the only subsheaf preserved by $\theta$. As $\cl_1(\LL\oplus \OX)\cdot \Theta^{n-1}=\LL\cdot \Theta^{n-1}>0$, it is stable. As $\cl_2(\LL\oplus \OX)=0$, the B-G inequality in Proposition~\ref{prop3.4} is $\mathcal{L}\cdot \Theta^{n-2}\leq 0$. If the equality holds, by the above lemma we get a projective VHS with $G_0=\operatorname{PSU(1,1)}$ and $K_0=\{\alpha\in \mathbb{R}|\operatorname{diag}\{e^{i\alpha},e^{-i\alpha}\}\}\cong U(1)$. Then the homogeneous space $G_0/K_0=\operatorname{PSU(1,1)}/U(1)$. As $PSU(1,1)$ acting on the unit disk by M\"obius transformation transitively with the stablizer of the origin $K_0$, we have $\operatorname{PSU(1,1)}/U(1)\cong \mathbb{D}$. Or equivalently $\operatorname{PSU(1,1)}/U(1)\cong \operatorname{PSL}(2,\mathbb{R})/\operatorname{SO}(2)\cong \mathbb{H}$. The equivariance of the period map follows from Proposition~\ref{equiv}.
+
+		If the representation is trivial, then the period map descends to $X$ which implies that $\theta=0$. Alternatively, if the representation is trivial (it is obtained by parallel transport w.r.t $\nabla^{hs}$), this implies that the principal bundle $R_H=P\times_K G_0$ is also triviallized by the parallel transports w.r.t $\nabla^{hs}$, so does all the associated bundles. Consider the adjoint bundle $P\times_K \g=P\times_K (\kk \oplus \mathfrak{p})$, the $K_0$-reduction $P_H$ and the Killing form $B$ on $\g$ together induce an indefinite Hermitian form $s$ on the bundle, be aware that no matter how the metric $P_H$ (i.e. the $K_0$-reduction of P) is chosen, $P\times_K \kk$ always corresponds to the negative definite subbundle of $P\times_K \g$ and $P\times_K \mathfrak{p}$ corresponds to the positive one (c.f. Definition~\ref{Hodge group}) and the Higgs field $\theta\in H^{0}(P\times_K \g^{-1,1}\times \Omega_X^1)$ always maps $P\times_K \kk$ into $P\times_K \mathfrak{p}$. Now since the parallel transport w.r.t to $\nabla^{hs}$ trivialize $P\times_K \g$ and $s$ (because $\nabla^{hs}$ preserves $s$), we have a $C^{\infty}$-decomposition $P\times_K \g=\mathcal{S}^{-}\oplus \mathcal{S}^{+}$ where $S^-$ and $S^{+}$ corresponds to the negative and positive subspace of $s$ respectively. Hence we must have $S^{-}=P\times_K \kk$ and $S^{+}=P\times_K \mathfrak{p}$. But as $S^{-}$ is the parallel subbundle w.r.t $\nabla^{hs}$, we must have $\theta=0$.
+
+		% \begin{center}
+		% \textcolor{blue!70!black}{\LARGE \textbf{To be continued…}}
+		% \end{center}
+	\end{frame}
+	\subsection{Uniformization}
+	\begin{frame}{Hermitian symmetric space}
+		\begin{definition}
+			A Hodge group of Hermitian type is a Hodge group of type $\g=\g^{0,0}\oplus \g^{-1,1}\oplus \g^{1,1}$ with no compact factor. For such a group, $K_0$ becomes a maximal compact subgroup. The homogeneous space $G_0/K_0$ is a Hermitian symmetric space of noncompact type. 
+		\end{definition}
+		Indeed the following three concepts are equivalent.
+		\begin{figure}[h]
+			\centering
+			\begin{tikzpicture}[
+				node distance=3cm,
+				every node/.style={align=center},
+				arrow/.style={->, thick}
+			]
+
+			% Nodes
+			\node (A) at (2,3) {$G_0/K_0$};
+			\node (B) at (4,0) {Hermitian\\ symmetric space};
+			\node (C) at (0,0) {Bounded\\ symmetric domain};
+
+			% Arrows
+			\draw[arrow] (A) to (B);
+			\draw[arrow] (B) to (C);
+			\draw[arrow] (C) to (A);
+
+			\end{tikzpicture}
+		\end{figure}
+	\end{frame}
+	\begin{frame}
+		\begin{definition}
+			A uniformizing bundle of $X$ is a principal system of Hodge bundles $(P,\theta)$ such that $\theta: T(X)\to P\times_K \g^{-1,1}$ is an isomorphism.
+		\end{definition}
+		It is important to notice that if $G_0$ has no center, then $\Ad$ is faithful, then this data is equivalent to a redution of the strcuture group of $T(X)$ from $\GL(n,\mathbb{C})$ to $K$, here we identify $K$ with its image of the adjoint representaion $\Ad: K\to \GL(\g^{-1,1})$ and $\GL(\g^{-1,1})$ with $\GL(n,\mathbb{C})$. More precisely, if we can specify some frames of $T(X)$ such that pointwisely they form a $K'$-torsor with $K'=\Ad(K)$ for some $K$ of $G_0$ with no center, and the right action of $K'$ on the frames is the same as the adjoint action of $K$ on $\g^{-1,1}$, then we can get a uniformizing bundle from this data. Indeed, denote the frame bundle by $P$, then $P$ is a $K$-bundle if we identify $K'$ with $K$ by $\Ad$ and its is obvious that $T(X)\cong P\times_{st(K')} \g^{-1,1}\cong P\times_K \g^{-1,1}$.
+	\end{frame}
+	\begin{frame}
+		\begin{Ex}
+			Suppose $T(X)=\oplus_{i=1}^{n}L_i$ with $L_i$ line bundles. Then we can consider frames preserves the decomposition, then the frame bundle $P$ is a $K'={\mathbb{C}^*}^{n}$-bundle. Indeed, $K'$ comes from the adjoint representation of $K$ associated to the Hodge group of Hermitian type $G_0=\operatorname{PSU}(1,1)^n$ with the associated bounded symmetric domain $\mathbb{D}^n$. 
+		\end{Ex}
+		Let us discuss this in detail.
+	\end{frame}
+	
+	\begin{frame}
+		Let $G_0=\operatorname{PSU}(1,1)$. It looks like
+			\[ \begin{pmatrix} \alpha & \beta \\ \bar{\beta} & \bar{\alpha} \end{pmatrix}, \quad  |\alpha|^2 - |\beta|^2 = 1 \]
+		And its Lie algebra $\mathfrak{su}(1,1)$ has three generators 
+		\[
+			\kk_0 = \begin{pmatrix} i & 0 \\ 0 & -i \end{pmatrix}, \quad
+			\mathfrak{p}_1 = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}, \quad
+			\mathfrak{p}_2 = \begin{pmatrix} 0 & i \\ -i & 0 \end{pmatrix} 
+		\]
+		And its complexification $\g$ has three generators
+	\[
+		\g^{0,0}=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}\]
+	\[	
+		\g^{-1,1} = \frac{1}{2}(\mathfrak{p}_1 - i \mathfrak{p}_2) = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix},\quad	
+		\g^{1,-1}= \frac{1}{2}(\mathfrak{p}_1 + i \mathfrak{p}_2)) = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}
+	\]
+	\end{frame}
+	\begin{frame}
+		And 
+		\[
+			K=\begin{pmatrix} z & 0 \\ 0 & z^{-1} \end{pmatrix}/\{\pm \id\}\cong \mathbb{C}^*/\{\pm \id\}
+		\]
+		And the adjoint representation of $K$ on $\g^{-1,1}$ is multilication by $z^2$. Hence the image of the representation $K'$ is still $\mathbb{C}^*$.
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		% Suppose $\widetilde{X}\cong \mathbb{D}$, as $\pi_1(X)$ acts holomorphically on $\mathbb{D}$, we get a representation $\rho:\pi_1(X)\to G_0$ and the isomorphism $\mathcal{P}:\widetilde{X}\cong \mathbb{D}$ is $\rho$-equivariant. We can regard  $G$ as a holomorphic $K$-bundle over $\mathbb{D}\cong G/K$.
+		\begin{Ex}[Canonical Higgs bundle]
+			Let $X$ be compact, the bundle $\Omega_X^1\oplus \mathcal{O}_X$ with $\theta=T(X)\cong \Hom(\Omega_X^1, \mathcal{O}_X)$ is called the canonical Higgs bundle. If it admits a metric such that $F_{\nabla^{ns}}^{\perp}=0$, then it gives rise to a uniformizing variation with $G_0=\operatorname{PU}(n,1)$.
+		\end{Ex}
+		It follows directly from Lemma~\ref{projectivevariation}. $\operatorname{PU}(n,1)$ is a Hodge group of Hermitian type with the associated bounded symmetric domain the unit ball $\mathbb{B}^n$. Its Hodge type looks like
+		\[
+			\mathfrak g^{0,0}
+			=
+			\left\{
+			\begin{pmatrix}
+			A & 0 \\
+			0 & -\mathrm{tr}(A)
+			\end{pmatrix}
+			\,\middle|\,
+			A\in M_n(\mathbb C)
+			\right\}
+		\]
+		\[	
+		\mathfrak g^{-1,1}
+			=
+			\left\{
+			\begin{pmatrix}
+			0 & v \\
+			0 & 0
+			\end{pmatrix}
+			\,\middle|\,
+			v\in\mathbb C^{n}
+			\right\}\quad
+			\mathfrak g^{1,-1}
+			=
+			\left\{
+			\begin{pmatrix}
+			0 & 0 \\
+			w & 0
+			\end{pmatrix}
+			\,\middle|\,
+			w\in(\mathbb C^{n})^{T}
+			\right\}.
+			\]
+	\end{frame}
+	\begin{frame}[allowframebreaks]{Uniformizing VHS}
+		A uniformizing variation of Hodge structure is a uniformizing bundle $(P,\theta)$ with a flat metric $P_H$. 
+		\begin{proposition}
+			Let $X$ be a complete K\"ahler manifold and let $\widetilde{X}$ be its universal cover. Then $\widetilde{X}$ is isomorphic to the bounded symmetric domain $\mathcal{D}$ if and only if a uniformizing VHS with $\theta^{-1}$ bounded exists for some Hodge group $G_0$ with $\mathcal{D}=G_0/K_0$.
+		\end{proposition}
+		\noindent \textit{Proof.}
+		Suppose such a uniformization variation exists. Then as $\theta$ is the differential of the period map $\mathcal{P}$, it is a local diffeomorphism. Since it is $\pi_1(X)$-equivariant, we can show that $\mathcal{P}$ is closed, hence surjective. As $\diff P^{-1}=\theta^{-1}$ is bounded and $\widetilde{X}$ is complete, it is easy to show that $\mathcal{P}$ is a covering. But as $\mathbb{D}$ is simply connected, hence $\mathcal{P}$ is an isomorphism. 
+		
+		Conversely, if $\widetilde{X}\cong \mathbb{D}$ and it is $\pi_1(X)$ equivariant. Let $G_0$ be the group of holomorphic automorphism of $\mathbb{D}$, then $\mathbb{D}\cong G_0/K_0$ then $\pi_1(X)$ acts on $\mathbb{D}$ by holomorphic automorphism, hence we get a representation. It suffices to construct a principal VHS on $\mathbb{D}$, but it arises in a natural way. We regard $G_0$ as a principal $K_0$-bundle over $\mathbb{D}$ then according to the Cartan decomposition, its Cartan-Maurer form $\omega=g^{-1}\diff g$ decompose into $\omega_\kk$ and $\omega_\h$ where the former is a connection form and the later is a tensorial form. And we have $\diff \omega +\frac{1}{2}[\omega,\omega]=0$. Extend the strucuture group of $G_0$ to $K$, we get $P=G_0\times_{K_0} K$. $\omega_\h$ splits into $\omega_{\h^-}$ and $\omega_{\h^+}$. As the curvature $\Omega_\kk=d\omega_\kk + \frac{1}{2}[\omega_\kk,\omega_\kk]=-\frac{1}{2}[\omega_\h,\omega_\h]$, this implies the $(0,2)$-part of the curvature vanishes, hence the $(0,1)$-part of $\omega_\kk$ gives us a holomorphic structure on $P$ and $\omega_{\h^-}$ is a Higgs field. If we further extends those structures to $R_H=G_0\times_{K_0} G_0$, then $\omega$ is the flat Hitchin-Simpson connection we want. 
+
+		We can even check what is the period map! Indeed, it is easy to see that $[g,g^{-1}]$ is a flat section w.r.t $\omega$, hence the period map is $\id$.
+		\hfill \qed
+	\end{frame}
+	\begin{frame}{Stability of uniformizing bundle}
+		Write the decomposition of $\g$ into simple ideals $\g=\oplus \g_i$. These are sub-Hodge structures, and if $G_0$ is connected they are Hodge representations of $G_0$. To be more general, we don't assume the connectedness. If $(P,\theta)$ is a uniformization bundle, locally we can decompose $P\times_K \g$ into $\oplus \g_i$, but globally they are twisted by the adjoint representation of $G$. However, we can find a unique finest global decompostion of $P\times_K \g$ into $\oplus U_j$ such that $U_j$ is locally a direct sum of a fixed subset of $\{\g_i\}_i$, i.e. the set of simple Lie algebra decomposed into disjoint subsets $\mathfrak{u}_j$. The $U_j$ may not comes from a representation of $G$, but we can find a subgroup $G'$ of $G$ such that the structure group of $P$ can be reduced to $K'=K\cap G'$, and $U_j=P'\times_{K'} \mathfrak{u}_j$, in the mean time the holomorphic structure of the whole adjoint bundle is preserved, i.e. $P\times_K \g\cong P'\times_{K'} \g$. We will always assume such a reduction is made if necessary. 
+		\begin{definition}
+			A uniformizing bundle is stable if it is $\mathfrak{u}_j$-stable for all $j$.
+		\end{definition}
+	\end{frame}
+	\begin{frame}
+		Let call for a lemma about Lie algebras.
+		\begin{lemma}
+			Suppose $\g_0$ is a simple Lie algebra of the type we are considering. If $e\in \g^{-1,1}$ then $[\g^{-1,1},[\g^{-1,1},e]]=\g^{-1,1}$.
+		\end{lemma}
+	\end{frame}
+\end{document}

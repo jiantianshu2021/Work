@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}frame\PYG{n+nb}{\PYGZcb{}}[noedging,nofootline]\PYG{n+nb}{\PYGZob{}}extended frame\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}begin}\PYG{n+nb}{\PYGZob{}}adjustwidth\PYG{n+nb}{\PYGZcb{}\PYGZob{}}\PYGZhy{}2em\PYG{n+nb}{\PYGZcb{}\PYGZob{}}\PYGZhy{}2em\PYG{n+nb}{\PYGZcb{}}\PYG{c}{\PYGZpc{} 2em extra to the left and 2em for right margin.}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}Iwide content
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}adjustwidth\PYG{n+nb}{\PYGZcb{}}
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}end}\PYG{n+nb}{\PYGZob{}}frame \PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}

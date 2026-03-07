@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{n+nb}{\PYGZca{}\PYGZca{}}I\PYG{k}{\PYGZbs{}setbeamertemplate}\PYG{n+nb}{\PYGZob{}}frame footer\PYG{n+nb}{\PYGZcb{}\PYGZob{}}My custom footer\PYG{n+nb}{\PYGZcb{}}
+\end{Verbatim}
