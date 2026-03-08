@@ -295,7 +295,7 @@
 	\end{frame}
 	\begin{frame}[allowframebreaks]{Construction of principal VHS}
 		We have the following theorem obtained by Simpson.
-		\begin{theorem}
+		\begin{theorem}\label{prop8.2}
 			If $(P,\theta, P_H)$ is $(\Pi_i,P_H)$-stable with respect to some family of irreducible polarized Hodge representations $\{\Pi_i\}_i$, which faithfully represents $\g$, i.e. $\oplus_i \diff\Pi_i$ is injective, then there exists a metric $P_{K}$ such that $\Lambda F_{\nabla^{hs}}=0$. If in addition $X$ is compact and $\operatorname{c}_2(P\times_K \g)\cdot [\omega]^{n-2}=0$ then $F_{\nabla^{hs}}=0$ so this gives a principal variation of Hodge structure. 
 		\end{theorem}
 		\noindent \textit{Proof.} 
@@ -311,9 +311,9 @@
 	\end{frame}
 	\begin{frame}{An example}
 		Let $V=\oplus V^{p,q}$ be a polarized Hodge structure with an indefinite Hermitian form ${s}=\oplus s^{p,q}$ such that $h=\oplus (-1)^p s^{p,q}$ is a metric. We define $G_0\coloneqq\Au(V,s)/U(1)$, then $K_0=\Au(V,h)/U(1)$. It follows that $G_0$ is a simple Lie group whose complexified Lie algebra $\g=\En(V)^{\perp}$. It is obvious that $\g^{p,-p}=\En(V)^{p,-p}\cap \g$ where $\En(V)^{k,-k}$ is the set of endomorphisms mapping $V^{p,q}$ into $V^{p+k,q-k}$  for any $p$ and $q$. Hence $G_0$ is a polarized Hodge group. 
-		\begin{definition}
+		\begin{Def}
 			A projective VHS modeled on $V$ is a principal VHS $(P_H,\nabla^{hs})$.
-		\end{definition}
+		\end{Def}
 	\end{frame}
 	\begin{frame}
 		\begin{lemma}\label{projectivevariation}
@@ -345,9 +345,9 @@
 	\end{frame}
 	\subsection{Uniformization}
 	\begin{frame}{Hermitian symmetric space}
-		\begin{definition}
+		\begin{Def}
 			A Hodge group of Hermitian type is a Hodge group of type $\g=\g^{0,0}\oplus \g^{-1,1}\oplus \g^{1,1}$ with no compact factor. For such a group, $K_0$ becomes a maximal compact subgroup. The homogeneous space $G_0/K_0$ is a Hermitian symmetric space of noncompact type. 
-		\end{definition}
+		\end{Def}
 		Indeed the following three concepts are equivalent.
 		\begin{figure}[h]
 			\centering
@@ -371,13 +371,13 @@
 		\end{figure}
 	\end{frame}
 	\begin{frame}
-		\begin{definition}
+		\begin{Def}
 			A uniformizing bundle of $X$ is a principal system of Hodge bundles $(P,\theta)$ such that $\theta: T(X)\to P\times_K \g^{-1,1}$ is an isomorphism.
-		\end{definition}
+		\end{Def}
 		It is important to notice that if $G_0$ has no center, then $\Ad$ is faithful, then this data is equivalent to a redution of the strcuture group of $T(X)$ from $\GL(n,\mathbb{C})$ to $K$, here we identify $K$ with its image of the adjoint representaion $\Ad: K\to \GL(\g^{-1,1})$ and $\GL(\g^{-1,1})$ with $\GL(n,\mathbb{C})$. More precisely, if we can specify some frames of $T(X)$ such that pointwisely they form a $K'$-torsor with $K'=\Ad(K)$ for some $K$ of $G_0$ with no center, and the right action of $K'$ on the frames is the same as the adjoint action of $K$ on $\g^{-1,1}$, then we can get a uniformizing bundle from this data. Indeed, denote the frame bundle by $P$, then $P$ is a $K$-bundle if we identify $K'$ with $K$ by $\Ad$ and its is obvious that $T(X)\cong P\times_{st(K')} \g^{-1,1}\cong P\times_K \g^{-1,1}$.
 	\end{frame}
 	\begin{frame}
-		\begin{Ex}
+		\begin{Ex}\label{ex1}
 			Suppose $T(X)=\oplus_{i=1}^{n}L_i$ with $L_i$ line bundles. Then we can consider frames preserves the decomposition, then the frame bundle $P$ is a $K'={\mathbb{C}^*}^{n}$-bundle. Indeed, $K'$ comes from the adjoint representation of $K$ associated to the Hodge group of Hermitian type $G_0=\operatorname{PSU}(1,1)^n$ with the associated bounded symmetric domain $\mathbb{D}^n$. 
 		\end{Ex}
 		Let us discuss this in detail.
@@ -409,7 +409,7 @@
 	\end{frame}
 	\begin{frame}[allowframebreaks]
 		% Suppose $\widetilde{X}\cong \mathbb{D}$, as $\pi_1(X)$ acts holomorphically on $\mathbb{D}$, we get a representation $\rho:\pi_1(X)\to G_0$ and the isomorphism $\mathcal{P}:\widetilde{X}\cong \mathbb{D}$ is $\rho$-equivariant. We can regard  $G$ as a holomorphic $K$-bundle over $\mathbb{D}\cong G/K$.
-		\begin{Ex}[Canonical Higgs bundle]
+		\begin{Ex}[Canonical Higgs bundle]\label{ex2}
 			Let $X$ be compact, the bundle $\Omega_X^1\oplus \mathcal{O}_X$ with $\theta=T(X)\cong \Hom(\Omega_X^1, \mathcal{O}_X)$ is called the canonical Higgs bundle. If it admits a metric such that $F_{\nabla^{ns}}^{\perp}=0$, then it gives rise to a uniformizing variation with $G_0=\operatorname{PU}(n,1)$.
 		\end{Ex}
 		It follows directly from Lemma~\ref{projectivevariation}. $\operatorname{PU}(n,1)$ is a Hodge group of Hermitian type with the associated bounded symmetric domain the unit ball $\mathbb{B}^n$. Its Hodge type looks like
@@ -450,7 +450,7 @@
 	\end{frame}
 	\begin{frame}[allowframebreaks]{Uniformizing VHS}
 		A uniformizing variation of Hodge structure is a uniformizing bundle $(P,\theta)$ with a flat metric $P_H$. 
-		\begin{proposition}
+		\begin{proposition}\label{uniformizing VHS}
 			Let $X$ be a complete K\"ahler manifold and let $\widetilde{X}$ be its universal cover. Then $\widetilde{X}$ is isomorphic to the bounded symmetric domain $\mathcal{D}$ if and only if a uniformizing VHS with $\theta^{-1}$ bounded exists for some Hodge group $G_0$ with $\mathcal{D}=G_0/K_0$.
 		\end{proposition}
 		\noindent \textit{Proof.}
@@ -463,14 +463,93 @@
 	\end{frame}
 	\begin{frame}{Stability of uniformizing bundle}
 		Write the decomposition of $\g$ into simple ideals $\g=\oplus \g_i$. These are sub-Hodge structures, and if $G_0$ is connected they are Hodge representations of $G_0$. To be more general, we don't assume the connectedness. If $(P,\theta)$ is a uniformization bundle, locally we can decompose $P\times_K \g$ into $\oplus \g_i$, but globally they are twisted by the adjoint representation of $G$. However, we can find a unique finest global decompostion of $P\times_K \g$ into $\oplus U_j$ such that $U_j$ is locally a direct sum of a fixed subset of $\{\g_i\}_i$, i.e. the set of simple Lie algebra decomposed into disjoint subsets $\mathfrak{u}_j$. The $U_j$ may not comes from a representation of $G$, but we can find a subgroup $G'$ of $G$ such that the structure group of $P$ can be reduced to $K'=K\cap G'$, and $U_j=P'\times_{K'} \mathfrak{u}_j$, in the mean time the holomorphic structure of the whole adjoint bundle is preserved, i.e. $P\times_K \g\cong P'\times_{K'} \g$. We will always assume such a reduction is made if necessary. 
-		\begin{definition}
+		\begin{Def}
 			A uniformizing bundle is stable if it is $\mathfrak{u}_j$-stable for all $j$.
-		\end{definition}
+		\end{Def}
 	\end{frame}
 	\begin{frame}
 		Let call for a lemma about Lie algebras.
 		\begin{lemma}
 			Suppose $\g_0$ is a simple Lie algebra of the type we are considering. If $e\in \g^{-1,1}$ then $[\g^{-1,1},[\g^{-1,1},e]]=\g^{-1,1}$.
 		\end{lemma}
+		\begin{corollary}\label{cor9.3}
+			Suppose $\g$ is semisimple.If $W\subset \g$ is a sub-Hodge structure such that $[\g^{-1,1},W]\subset W$ then $\dim W^{-1,1}\geq \dim W^{1,-1}$. If equality holds then $W$ is a direct sum of ideals of $\g$.
+		\end{corollary}
+		
+	\end{frame}
+	\begin{frame}
+		\begin{corollary}\label{cor9.4}
+			Suppose $(P,\theta)$ is a uniformizing system of Hodge bundles. Then the following conditions are equivalent:
+			\begin{enumerate}
+				\item $(P,\theta)$ is stable.
+				\item $P\times_K \g$ is a direct sum of stable systems of degree zero.
+				\item Each saturated subsystem of Hodge sheaves $W\subset P\times_K \g$ with $\deg(W)\geq 0$ is locally a direct sum of some $\g_i$. 
+			\end{enumerate}
+		\end{corollary}
+		\textit{Proof.}
+		$1.\Rightarrow 2.$ Write $P\times_K \g=U_j$, then $U_i$ is stable and since $\mathfrak{u}_j$ is semisimple, it has degree zero. $2.\Rightarrow 3.$ As $P\times_K \g$ is polystable, $\deg W=0$ and $P\times_K \g=W\oplus W'$. In particular, $W'$ is also a system of Hodge bundles. Apply last corollary to $W$ and $W'$, the equality holds for both of them. $3.\Rightarrow 1.$ If $W\subset U_j$ is a saturated subsystem of Hodge sheaves with $\deg W\geq 0$ then $W$ is locally a direct sum of some $\g_i$, hence $W=U_j$ since $U_j$ is finest. \hfill \qed
+	\end{frame}
+	\begin{frame}
+		\begin{theorem}
+		Suppose $X$ is compact. $\widetilde{X}\cong \mathbb{D}$ if and only if there is a uniformzing bundle $(P,\theta)$ with structure group $G_0$ corresponding to $\mathbb{D}$ such that $(P,\theta)$ is stable and $\cl_2(P\times_K \g)\cdot [\omega]^{n-2}=0$.
+	\end{theorem}
+	\noindent \textit{Proof.}
+	Each $U_j$ comes from an irreducible Hodge representation of $G'$ to $\mathfrak{u}_j$. Apply Theorem~\ref{prop8.2} we know that $(P,\theta)$ is a uniformizing VHS. Apply Proposition~\ref{uniformizing VHS} we know that $\widetilde{X}\cong \mathbb{D}$. Conversely, apply Proposition~\ref{uniformizing VHS} we get a uniformizing VHS $(P,\theta)$. Hence all Chern classes of $P\times_K \g$ vanish, and it is polystable. Apply above corollary, we know that $(P,\theta)$ is stable.\hfill \qed
+	\begin{corollary}\label{cor9.5}
+		Let $\mathbb{D}$ be as before, let $X$ be a smooth projective variety. Then for any $\sigma\in \Au(\mathbb{C}/\mathbb{Q})$, if $X$ is uniformized by $\mathbb{D}$, so does $X^{\sigma}$.
+	\end{corollary}
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\begin{proposition}\label{prop9.6}
+			Suppose $X$ is compact and suppose $(P,\theta)$ is a uniformizaing bundle. Then $\theta: T(X)\cong P\times_K \g^{-1,1}\cong \oplus_j V_j$. If the $V_j$ are semistable with degree strictly less than zero, then $(P,\theta)$ is stable. So if $\cl_2(P\times_K \g)\cdot [\omega]^{n-2}=0$, then $(P,\theta)$ is a uniformizing VHS of $X$.	
+		\end{proposition}
+		\textit{Proof.}
+		Suppose $G$ is connected. Then the action of $K$ on $\g_i^{-1,1}$ is irreducible, hence $V_i=P\times_K \g_i^{-1,1}$. The $P\times_K \g_i^{-1,1}$ and their duals $P\times_K \g_i^{1,-1}$ are semistable. The Lie bracket \[ [\cdot,\cdot]: P\times_K \g_i^{-1,1}\otimes P\times_K \g_i^{-1,1}\to P\times_K \g_i^{0,0}\] is surjective, hence the right handside is semistable of degree zero. Suppose $W\subset P\times_K \g_i$ is a subsystem of Hodge sheaves. Then $\deg(W^{0,0})\leq 0$ and $\deg(W^{1,-1}\leq -\rank(W^{1,-1}))\cdot \mu$ and $\deg(W^{-1,1})\leq \rank(W^{1,1})\cdot \mu$ where $\mu(V_i)<0$ is the slope . Therefore
+		\[
+		\mu(W)\leq (\rank(W^{-1,1})-\rank(W^{1,-1}))\cdot \mu(V_i)\leq 0
+		\]
+		and if the equality holds, then $W=V_i$ using Corollary~\ref{cor9.3}, hence $V_i$ us stable.
+
+		Suppose $G$ is not connected. Let $G^o$ be the connected component of $G$ and $K^o$ is the connected component of $K$. Then $P/K^o$ is a $K/K^o$-principal bundle which is also a covering space of $X$. And we have the monodromy $\pi_1(X)\to K/K^o$. Find a covering $\pi:X^o\to X$  whose fundamental group is the kernel of the monodromy, then we can reduce the structure group of $P$ from $K$ to $K^o$ over $X^o$. The pullback $\pi^*(V_j)$ are semistable. If we decompose $TX^o=\oplus V_k^o$ with respcet to the $K^o$-action, then $\pi^*(V_j)$ is the direct sum of some $V_k^o$. Hence each $V_k^o$ is semistable with negative degree. By the above discussion for connected $G^o$, they are stable hence $P\times_K \g=P^o\times_{K^o} \g$ is polystable over $X^o$. If $W$ is a subsystem of Hodge sheaves with $\deg(W)\geq 0$ over $X$, then its pullback $\pi^*W$ has zero degree which must be a direct sum of stable subbundle of $P^o\times_{K^o} \g$. Hence by Corollary~\ref{cor9.3}, it is locally direct sum of simple ideals, so does $W$, hence by Corollary~\ref{cor9.4}, $(P,\theta)$ is stable.
+	\end{frame}
+	\begin{frame}
+		\begin{corollary}\label{cor9.7}
+			Suppose $X$ is compact. If $T_X=\oplus_{i=1}^{n}L_i$ is a direct sum of lindbundles of negative degree, and if $(\cl_1(X)^2-2\cl_2(X))\cdot [\omega]^{n-2}=0$, then $X$ is uniformized by $\mathbb{B}^n$.
+		\end{corollary}
+		\textit{Proof.}
+		Follows from the discussion in Example~\ref{ex1} that we have a uniformizing bundle $P$ with $K=(\mathbb{C}^*/\{\id,-id\})^n$. And the associated bounded symmetric domain is $\mathbb{B}^n$. Direct calculation shows that $\cl_2(P \times_K \g)=2\cl_2(X)-\cl_1(X)^2$. \hfill \qed
+	\end{frame}
+	\begin{frame}
+		Next call for the canonical Higgs bundle $W$ in Example~\ref{ex2}.
+		\begin{proposition}[Miyaoka-Yau inequality]\label{prop9.8}
+			Suppose $X$ is compact. If $W$ is a stable then \[
+			\left(2\cl_2(X)-\frac{n}{n+1}\cl_1(X)^2\right)\cdot [\omega]^{n-2}\geq 0
+			\]
+			and if the equality holds, then $X$ is uniformized by $\mathbb{B}^n$.
+		\end{proposition}
+		If $X$ is a compact curve, then the Chern class condition holds trivially, and $W$ is stable if and only if the genus $g$ of $X$ is larger than $2$. Hence, if $g\geq 2$, $X$ is uniformized by $\mathbb{B}$, this is the classical uniformization.
+	\end{frame}
+	\begin{frame}[allowframebreaks]
+		\begin{proposition}\label{prop9.9}
+			Suppose $X$ is a compact K\"ahler surface. If $\cl_1(X)^2\geq 3\cl_2(X)$, $\cl_1(X)^2\geq 0$ and $\cl_1(X)\cdot [\omega]<0$ then $W$ is stable so $\cl_1(X)=3\cl_2(X)$ and $\widetilde{X}=\mathbb{B}^2$.
+		\end{proposition}
+		\textit{Proof.}
+		It suffices to show the dual Higgs bundle $W^*=(\OX,T_X)$ is stable. The only saturated subsheaf of rank two is $T_X$ and it is taken care of by $\cl_1(X)
+		\cdot [\omega]<0$. The saturated subsheaves of rank one is invertible subsheaves of $T_X$ who is a line subbundle outside a finite set. Let $L$ be such a subsheaf. We have to show that $\cl_1(L)\cdot [\omega]<\frac{1}{3}\cl_1(X)\cdot [\omega]$. Suppose to the contrary. Let $M=T_X/L$ which is a line bundle in codimension one. Let $N=M^{**}$, then it is a line bundle and $M\hookrightarrow N$ has quotient supported on a finite set. $(\OX,N)$ is a system of Hodge bundles and 
+		\[
+		\cl_1(N)\cdot [\omega]\leq \frac{2}{3}\cl_1(X)\cdot [\omega]\leq 0
+		\]
+		so it is stable. The B-G inequality implies $\cl_1(N)^2\leq 0$. $T_X$ is equal to $N+L-(N/M)$ in the Grothendieck group, hence 
+		\begin{align*}
+			\cl_2(X)&=\cl_1(N)\cl_1(L)-\cl_2(N/M)\\
+			&=\cl_1(X)\cl_1(N)-\cl_1(N)^2-\cl_2(N/M)\\
+			&\geq \cl_1(N)\cl_1(X)-\cl_1(N)
+		\end{align*}
+		the last inequality holds because $\cl_2(N/M)$ equals to a nonpositive sum of the point in its support. Therefore 
+		\[
+		(\cl_1(N)-2\cl_1(X))^2\geq 4(\cl_1(X)^2-3
+		\cl_2(X))\geq 0
+		\] 
+		by our assumption. On the other hand, we apply the Hodge index theorem to $H^{1,1}(X,\mathbb{R})$. The intersection form on it has signature $(1,h^{1,1}-1)$ and we can choose the one positive definition subspace spanned by $\omega$. Hence $\cl_2(X)$ lies in the interior of the negative half of the positive cone, while $3\cl_1(N)$ is outside the cone below $2\cl_1(X)$. Hence $3\cl_1(N)-2\cl_1(X)$ is strictly outside the cone, so its square is strictly negative, hence a contradiction.\hfill \qed
 	\end{frame}
 \end{document}
